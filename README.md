@@ -2,6 +2,11 @@
 
 A **full-stack** e-commerce application built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)** with **Zustand** for state management and **Razorpay** for payments.  
 
+---
+## 🌐 Live Demo  
+[Visit the Website](https://mern-ecommerce-gnuo.onrender.com)  
+---
+
 ## 🚀 Features  
 - **User Authentication** – Signup, login, logout, and refresh token functionality.  
 - **Product Management** – Perform CRUD operations, manage featured products, and organize categories.  
