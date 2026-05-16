@@ -29,7 +29,7 @@ export const getFeaturedProducts = async (req, res) => {
         }
 
         // update redis for future quick acess 
-        await redis.setex("featured_products", JSON.stringify(featuredProducts));
+        await redis.setex("featured_products", 86400, JSON.stringify(featuredProducts));
 
         res.json({featuredProducts});
 
@@ -160,7 +160,7 @@ export const toggleFeaturedProduct = async (req,res) => {
 async function updateFeaturedProductCache(){
     try{
         const featuredProduct = await Product.find({isFeatured: true}).lean();
-        await redis.set("featured_products", JSON.stringify(featuredProduct));
+        await redis.setex("featured_products", 86400, JSON.stringify(featuredProduct));
 
     } catch(err){
         console.error("Error in updating featured product cache:",err);
